@@ -1,4 +1,3 @@
-//--no-verify
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,10 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-
-
 const ProductBox = ({ name, price, promo, stars }) => {
-
   
   return( 
     <div className={styles.root}>
