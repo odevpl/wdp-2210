@@ -1,5 +1,6 @@
 @import "../../../styles/settings.scss";
 
+
 // .root {
 // }
 
@@ -39,3 +40,12 @@
     color: #ffffff;
   }
 }
+
+.color {
+  background-color: $primary;
+  // font-size: 13px;
+  // line-height: 24px;
+  // padding: 5px 10px;
+  // font-weight: 400;
+}
+
