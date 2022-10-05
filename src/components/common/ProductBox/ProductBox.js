@@ -15,7 +15,6 @@ const ProductBox = ({ name, price, promo, stars }) => {
   
   return( 
     <div className={styles.root}>
-    
       <div className={styles.photo} style={{backgroundImage: `url(${process.env.PUBLIC_URL}` + '/images/bed/'+ name.slice(-1) +'.jpg)' }}>
 
         {promo && <div className={styles.sale} sty>{promo}</div>}
