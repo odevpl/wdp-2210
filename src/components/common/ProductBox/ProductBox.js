@@ -6,12 +6,13 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Popup from '../../common/Popup/Popup';
-
 import clsx from 'clsx';
 import { useState } from 'react';
 import StarCounter from '../StarCounter/StarCounter';
 
-const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
+
+
+const ProductBox = ({ name, price, promo, stars, favorite, item, oldPrice }) => {
   const [isFavorite, setFavorite] = useState(favorite);
   const [exchange, setExchange] = useState(false);
   const [mouse, setMouse] = useState(false);
@@ -47,6 +48,18 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
     e.preventDefault();
     setPopup(true);
   };
+  const showOldPrice = () => {
+    if (oldPrice > 0) {
+      return (
+        <span className={styles.OldPrice}>
+          <del>$ {oldPrice}</del>
+        </span>
+      );
+    } else {
+      return ('');
+    }
+  };
+
 
   return (
     <div className={styles.root} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
@@ -101,6 +114,9 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
+        <div>
+          {showOldPrice()}
+        </div>
         <div className={styles.price}>
           <Button noHover variant='small' className={mouse ? 'color' : ''}>
             $ {price}
@@ -118,6 +134,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   item: PropTypes.object,
