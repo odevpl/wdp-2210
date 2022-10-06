@@ -12,10 +12,31 @@ import Button from '../Button/Button';
 import clsx from 'clsx';
 import { useState } from 'react';
 
-const ProductBox = ({ name, price, promo, stars }) => {
+const ProductBox = ({ name, price, promo, stars, favorite }) => {
 
-  const [favorite , setFavorite] =useState(false);
+  const [isFavorite , setFavorite] =useState(favorite);
   const [exchange, setExchange] =useState(false);
+
+
+
+  const clickFavorite =()=>{
+    if(isFavorite === true){
+      setFavorite(false);
+    }else if(isFavorite === false){
+      setFavorite(true);
+    }
+
+  };
+
+  const clickExchange =()=>{
+    if(exchange === true){
+      setExchange(false);
+    }else if(exchange === false){
+      setExchange(true);
+    }
+
+  };
+
   
   return( 
     <div className={styles.root}>
@@ -46,22 +67,10 @@ const ProductBox = ({ name, price, promo, stars }) => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={clsx(styles.outlines)}>
-          <Button onClick={e=>{
-            if(favorite === true){
-              setFavorite(false);
-            }else if(favorite === false){
-              setFavorite(true);
-            }
-          }} className={clsx(favorite && styles.stars)} variant='outline' >
+          <Button onClick={clickFavorite} className={clsx(favorite && styles.stars)} variant='outline' >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button onClick={e=>{
-            if(exchange === true){
-              setExchange(false);
-            }else if(exchange === false){
-              setExchange(true);
-            }
-          }} variant='outline' className={clsx(exchange && styles.stars )}>
+          <Button onClick={clickExchange} variant='outline' className={clsx(exchange && styles.stars )}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
