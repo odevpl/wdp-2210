@@ -79,3 +79,12 @@ $productSearch-text-color: $text-color;
 $productSearch-category-right-border:$darkrey;
 $productSearch-category-icon: $primary;
 $productSearch-placeholder-color:$text-color;
+$form-border-color: #292929;
+
+//Hover Setting:
+$transition:left 0.25s, right 0.25s, top 0.25s, bottom 0.25s, color 0.25s, background-color 0.25s, transform 0.25s;
+$hover-background: $primary;
+$hover-text-color: white;
+$hover-top-down: 0px; // -x go top, x go down
+$hover-left-right: 0px; // -x go left, x go right
+$hover-scale: 1;

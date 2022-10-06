@@ -17,8 +17,14 @@
         font-size: 13px;
 
         &:hover {
-          color: $primary;
+          transition: $transition; 
+          background-color: $hover-background;
+          color: $hover-text-color;
           text-decoration: none;
+          transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+          position: relative;
+          padding: 3px;
+          border-radius: 3px;
         }
       }
     }

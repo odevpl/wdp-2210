@@ -90,6 +90,10 @@
     display: none;
     border: 1px solid $productSearch-border;
     border-top: transparent;
+
+    li:hover {
+      background-color: $primary;
+    }
   }
 }
 
@@ -97,6 +101,3 @@
   display: block;
 }
 
-li:hover {
-  background-color: $primary;
-}

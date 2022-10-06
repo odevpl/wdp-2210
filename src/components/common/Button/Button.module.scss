@@ -16,6 +16,8 @@
     color: $button-main-hover-text !important;
     background-color: $button-main-hover-bg;
     text-decoration: none;
+    transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+    position: relative;
   }
 }
 
@@ -36,8 +38,12 @@
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: $button-outline-hover-bg;
-    color: $button-outline-hover-color;
+    transition: $transition; 
+    background-color: $hover-background;
+    color: $hover-text-color;
+    text-decoration: none;
+    transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+    position: relative;
   }
 }
 
