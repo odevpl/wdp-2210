@@ -70,3 +70,10 @@
     }
   }
 }
+
+
+@media screen and (max-width: 600px) {
+  .phoneNumber p {
+    font-size: 12px !important;
+  }
+}
