@@ -61,3 +61,42 @@
   }
 }
 
+.dropdown {
+  position: relative;
+  padding: 0 35px;
+  cursor: pointer;
+  z-index: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  top: 44px;
+  width: 100%;
+  left: 0px;
+  background-color: white;
+
+  ul {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: none;
+    border: 1px solid $form-border-color;
+    border-top: transparent;
+  }
+}
+
+.dropdown:hover .content ul {
+  display: block;
+}
+
+li:hover {
+  background-color: $primary;
+}
