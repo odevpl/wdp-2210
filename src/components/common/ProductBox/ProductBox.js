@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -10,8 +9,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import clsx from 'clsx';
+import { useState } from 'react';
 
 const ProductBox = ({ name, price, promo, stars }) => {
+
+  const [favorite , setFavorite] =useState(false);
+  const [exchange, setExchange] =useState(false);
   
   return( 
     <div className={styles.root}>
@@ -41,11 +45,23 @@ const ProductBox = ({ name, price, promo, stars }) => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
-        <div className={styles.outlines}>
-          <Button variant='outline'>
+        <div className={clsx(styles.outlines)}>
+          <Button onClick={e=>{
+            if(favorite === true){
+              setFavorite(false);
+            }else if(favorite === false){
+              setFavorite(true);
+            }
+          }} className={clsx(favorite && styles.stars)} variant='outline' >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button onClick={e=>{
+            if(exchange === true){
+              setExchange(false);
+            }else if(exchange === false){
+              setExchange(true);
+            }
+          }} variant='outline' className={clsx(exchange && styles.stars )}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
