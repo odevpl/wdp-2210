@@ -1,13 +1,81 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
-
+//COLOR VARIABLES
 $primary: #d58e32;
+$white: #ffffff;
+$veryLightGrey: #e1e1e1;
+$lightGrey: rgb(216, 216, 216);
+$mediumGrey: #434343;
+$darkrey: #363636;
+$shadow: rgba(1, 2, 2, 0.2);
 
 $text-color: #2a2a2a;
 
-$form-border-color: #292929;
+//Header
+$header-topbar-bg: $mediumGrey;
+$header-bg: $darkrey;
+$header-phone-numer: $lightGrey;
+$cartBox-color: $white;
+$cartBox-counter: $white;
+$cartBox-hover: $primary;
+$header-links: $white;
+
+//Header menu:
+$header-menu-text-color:$text-color;
+$header-menu-activeText-color:$text-color;
+$header-menu-bg: $white;
+$header-menu-shadow: $shadow;
+$header-menu-top-border: $white;
+$header-menu-hover-bg: $primary;
+$header-menu-hover-text: $white;
+
+
+//Footer:
+$footer-claim-bg: $darkrey;
+$footer-bg: $mediumGrey;
+$footer-headers: $white;
+$footer-list-color: $lightGrey;
+$footer-list-hover: $white;
+$footer-copyright-color: $lightGrey;
+$footer-socialmedia: $lightGrey;
+$footer-socialmedia-hover: $primary;
+
+//Button:
+$button-main-bg:$darkrey;
+$button-main-color:$white;
+$button-main-hover-bg: $primary;
+$button-main-hover-text: $white;
+
+$button-outline-border:$darkrey;
+$button-outline-color:$darkrey;
+$button-outline-hover-bg:$darkrey;
+$button-outline-hover-color:$white;
+
+//Product Box:
+$product-box-bg: $white;
+$product-box-border:$veryLightGrey;
+$product-photo-bg: $lightGrey;
+$product-sale-bg:$darkrey;
+$product-sale-color:$white;
+$product-stars-color: $darkrey;
+$product-lineUnder-star: $darkrey; 
+$product-line-before: $primary;
+
+//Feature Box:
+$feature-box-border:$lightGrey;
+$feature-box-icon-color: $darkrey;
+$feature-icon-circle-bg: $white;
+$feature-icon-circle-border:$lightGrey;
+$feature-icon-circle-border2:$lightGrey;
+$feature-box-content-color: $darkrey;
+$feature-active-icon:$white;
+$feature-active-bg:$primary;
+$feature-active-border:$primary;
+$feature-active-content:$primary;
+
+//ProductSearch::after
+$productSearch-border: $darkrey;
+$productSearch-text-color: $text-color;
+$productSearch-category-right-border:$darkrey;
+$productSearch-category-icon: $primary;
+$productSearch-placeholder-color:$text-color;
