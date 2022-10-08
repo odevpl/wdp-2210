@@ -5,11 +5,13 @@
     background-color: $footer-bg;
     padding: 3rem 0;
 
+
     .menuWrapper {
       h6 {
         color: $footer-headers;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
+
       }
 
       ul {
@@ -30,15 +32,6 @@
       }
     }
 
-    .paymentMethods {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-
-      li {
-        display: inline-block;
-      }
-    }
   }
 
   .bottomBar {
@@ -79,4 +72,14 @@
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .orderIMG {
+      width: 100%;
+    }
+  }
 }
+      
+  
+  
+
+
