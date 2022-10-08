@@ -10,7 +10,6 @@ const Button = ({ children, variant, noHover, className: propClassName, ...props
 
   if (variant) classes.push(styles[variant]);
   else classes.push('main');
-  console.log(variant);
 
   let Comp = 'a';
 
