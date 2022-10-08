@@ -40,3 +40,17 @@
     }
   }
 }
+
+.flexclass {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  span {
+    display:  none;
+  }
+
+  li {
+    margin-right: 5px !important;
+  }
+}
