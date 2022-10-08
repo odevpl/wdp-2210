@@ -10,12 +10,17 @@ const Button = ({ children, variant, noHover, className: propClassName, ...props
 
   if (variant) classes.push(styles[variant]);
   else classes.push('main');
+  console.log(variant);
 
   let Comp = 'a';
 
   if (noHover) {
     classes.push(styles.noHover);
     Comp = 'div';
+  }
+
+  if (propClassName === 'color') {
+    classes.push(styles[propClassName]);
   }
 
   return (
