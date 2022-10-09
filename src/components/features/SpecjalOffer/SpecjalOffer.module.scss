@@ -1,0 +1,34 @@
+@import "../../../styles/settings.scss";
+
+ .prom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 350px;
+ }
+
+    .left{
+        border: 1px solid black;
+        flex-direction: row;
+        min-width: 520px;
+        min-height: 350px;
+    }
+    .right{
+        
+        flex-direction: column;
+        .up{
+            border: 1px solid black;
+            flex-direction: row;
+            min-height: 165px;
+            min-width: 550px;
+            margin-bottom: 20px;
+        }
+        .down{
+            border: 1px solid black;
+            flex-direction: row;
+            min-height: 165px;
+            min-width: 550px;
+            margin-top: 15px;
+        }
+    }
