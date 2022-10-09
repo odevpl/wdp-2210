@@ -41,14 +41,13 @@ class NewFurniture extends React.Component {
       );
     }
 
-    const tabExchange = abc =>{
-    
-      if(tabE.includes(abc)===false && tabE.length < 4){
+    const tabExchange = abc => {
+      if (tabE.includes(abc) === false && tabE.length < 4) {
         tabE.push(abc);
-        console.log('hej',tabE);    
-      }else if(tabE.includes(abc)===true){
-        const position =tabE.indexOf(abc);
-        tabE.splice(position,1);
+        console.log('hej', tabE);
+      } else if (tabE.includes(abc) === true) {
+        const position = tabE.indexOf(abc);
+        tabE.splice(position, 1);
       }
     };
 
@@ -107,7 +106,7 @@ class NewFurniture extends React.Component {
             </div>
           </div>
         </Swipeable>
-        { tabE.length && <ProductExchange  tabE={tabE}/>}
+        {tabE.length && <ProductExchange tabE={tabE} />}
       </div>
     );
   }
