@@ -19,6 +19,8 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  reload() {}
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
