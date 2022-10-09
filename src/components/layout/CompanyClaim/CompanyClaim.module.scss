@@ -71,9 +71,23 @@
   }
 }
 
+.mobile {
+  display: none;
+}
+
 
 @media screen and (max-width: 600px) {
   .phoneNumber p {
     font-size: 12px !important;
+  }
+
+  .root {
+    .site {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+    }
   }
 }
