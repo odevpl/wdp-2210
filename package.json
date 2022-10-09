@@ -65,8 +65,8 @@
     "react-scripts": "3.1.2",
     "react-swipeable": "^7.0.0",
     "react-test-renderer": "^16.9.0",
-    "redux": "^4.0.4",
-    "sass": "^1.54.3"
+    "redux": "^4.2.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "husky": "^3.1.0",

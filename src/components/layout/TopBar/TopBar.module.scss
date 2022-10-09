@@ -13,7 +13,7 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $header-links;
         font-size: 13px;
 
         &:hover {
@@ -38,5 +38,19 @@
     .icon {
       margin-right: 5px;
     }
+  }
+}
+
+.flexclass {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  span {
+    display:  none;
+  }
+
+  li {
+    margin-right: 5px !important;
   }
 }
