@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
+import ProductExchange from '../../features/ProductExchange/ProductExchange';
 
 class NewFurniture extends React.Component {
   state = {
@@ -22,6 +22,7 @@ class NewFurniture extends React.Component {
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
+    const tabE = [];
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -39,6 +40,17 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
+
+    const tabExchange = abc =>{
+    
+      if(tabE.includes(abc)===false && tabE.length < 4){
+        tabE.push(abc);
+        console.log('hej',tabE);    
+      }else if(tabE.includes(abc)===true){
+        const position =tabE.indexOf(abc);
+        tabE.splice(position,1);
+      }
+    };
 
     const leftAction = () => {
       this.handlePageChange(activePage + 1);
@@ -83,19 +95,19 @@ class NewFurniture extends React.Component {
                   </div>
                 </div>
               </div>
-
               <div className='row'>
                 {categoryProducts
                   .slice(activePage * 8, (activePage + 1) * 8)
                   .map(item => (
                     <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
+                      <ProductBox {...item} action={tabExchange} />
                     </div>
                   ))}
               </div>
             </div>
           </div>
         </Swipeable>
+        { tabE.length && <ProductExchange  tabE={tabE}/>}
       </div>
     );
   }
