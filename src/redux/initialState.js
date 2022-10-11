@@ -1,10 +1,10 @@
 const initialState = {
-  brands:[
-    {name:'brand'},
-    {name:'design'},
-    {name:'li'},
-    {name:'orginal'},
-    {name:'quality'},
+  brands: [
+    { id: '1', name: 'brand' },
+    { id: '2', name: 'design' },
+    { id: '3', name: 'li' },
+    { id: '4', name: 'orginal' },
+    { id: '5', name: 'quality' },
   ],
   categories: [
     { id: 'bed', name: 'Bed' },
