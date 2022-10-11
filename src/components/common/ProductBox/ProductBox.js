@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -10,11 +9,36 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+
+import clsx from 'clsx';
 import { useState } from 'react';
 
-const ProductBox = ({ name, price, promo, stars }) => {
-  const [mouse, setMouse] = useState(false);
+const ProductBox = ({ name, price, promo, stars, favorite }) => {
 
+  const [isFavorite , setFavorite] =useState(favorite);
+  const [exchange, setExchange] =useState(false);
+  const [mouse, setMouse] = useState(false)
+  
+  
+
+  const clickFavorite =()=>{
+    if(isFavorite === true){
+      setFavorite(false);
+    }else if(isFavorite === false){
+      setFavorite(true);
+    }
+
+  };
+
+  const clickExchange =()=>{
+    if(exchange === true){
+      setExchange(false);
+    }else if(exchange === false){
+      setExchange(true);
+    }
+
+  };
+  
   const mouseEnter = e => {
     e.preventDefault();
     setMouse(true);
@@ -25,15 +49,16 @@ const ProductBox = ({ name, price, promo, stars }) => {
     setMouse(false);
   };
 
-  return (
+  
+  return( 
     <div className={styles.root} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-      <div className={styles.photo}>
-        {promo && <div className={styles.sale}>{promo}</div>}
+      <div className={styles.photo} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/bed/` + name.slice(-1) +'.jpg)' }}>
+
+        {promo && <div className={styles.sale} sty>{promo}</div>}
         <div className={styles.buttons}>
+          <Button variant='small'  className={mouse ? '' : styles.none}>Quick View</Button>
           <Button variant='small' className={mouse ? '' : styles.none}>
-            Quick View
-          </Button>
-          <Button variant='small' className={mouse ? '' : styles.none}>
+
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -54,11 +79,11 @@ const ProductBox = ({ name, price, promo, stars }) => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
-        <div className={styles.outlines}>
-          <Button variant='outline'>
+        <div className={clsx(styles.outlines)}>
+          <Button onClick={clickFavorite} className={clsx(favorite && styles.stars)} variant='outline' >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button onClick={clickExchange} variant='outline' className={clsx(exchange && styles.stars )}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
