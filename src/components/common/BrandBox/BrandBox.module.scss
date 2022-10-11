@@ -1,0 +1,46 @@
+
+.container{
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+.brandImageBox{
+    max-height: 75px;
+    margin-bottom: 10px;
+    padding-bottom: 1px;
+    display: grid;
+    grid-template-columns: 5% 18% 18% 18% 18% 18% 5%;
+
+    border-top: 1px solid grey;
+    border-bottom:  1px solid grey;
+
+    .brandImage{
+        border: 3px solid grey;
+        margin: 5px;
+        max-height: 30%;
+        
+
+        img{
+            width:  100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+    }
+}
+
+.faBox{
+    margin: 5px;
+    height: 30%;
+    border: 2px solid black;
+	position: relative;
+    background-color: black;
+
+    .fa{
+        position: absolute;  
+        top: 50%;  
+        left: 50%;  
+        transform: translate(-50%, -50%);
+        color: white;
+
+    }
+}
