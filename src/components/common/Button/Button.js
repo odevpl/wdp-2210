@@ -18,6 +18,10 @@ const Button = ({ children, variant, noHover, className: propClassName, ...props
     Comp = 'div';
   }
 
+  if (propClassName === 'color') {
+    classes.push(styles[propClassName]);
+  }
+
   return (
     <Comp href='#' {...props} className={classes.join(' ')}>
       {children}

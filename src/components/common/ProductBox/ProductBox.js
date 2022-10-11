@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+
 import clsx from 'clsx';
 import { useState } from 'react';
 
@@ -16,8 +17,9 @@ const ProductBox = ({ name, price, promo, stars, favorite }) => {
 
   const [isFavorite , setFavorite] =useState(favorite);
   const [exchange, setExchange] =useState(false);
-
-
+  const [mouse, setMouse] = useState(false)
+  
+  
 
   const clickFavorite =()=>{
     if(isFavorite === true){
@@ -36,16 +38,27 @@ const ProductBox = ({ name, price, promo, stars, favorite }) => {
     }
 
   };
+  
+  const mouseEnter = e => {
+    e.preventDefault();
+    setMouse(true);
+  };
+
+  const mouseLeave = e => {
+    e.preventDefault();
+    setMouse(false);
+  };
 
   
   return( 
-    <div className={styles.root}>
+    <div className={styles.root} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
       <div className={styles.photo} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/bed/` + name.slice(-1) +'.jpg)' }}>
 
         {promo && <div className={styles.sale} sty>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
-          <Button variant='small'>
+          <Button variant='small'  className={mouse ? '' : styles.none}>Quick View</Button>
+          <Button variant='small' className={mouse ? '' : styles.none}>
+
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -75,7 +88,7 @@ const ProductBox = ({ name, price, promo, stars, favorite }) => {
           </Button>
         </div>
         <div className={styles.price}>
-          <Button noHover variant='small'>
+          <Button noHover variant='small' className={mouse ? 'color' : ''}>
             $ {price}
           </Button>
         </div>
