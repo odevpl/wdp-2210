@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { useState } from 'react';
+import StarCounter from '../StarCounter/StarCounter';
 
-const ProductBox = ({ name, price, promo, stars }) => {
+const ProductBox = ({ name, price, promo, stars, item }) => {
   const [mouse, setMouse] = useState(false);
 
   const mouseEnter = e => {
@@ -40,17 +37,7 @@ const ProductBox = ({ name, price, promo, stars }) => {
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <StarCounter stars={stars} item={item} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -78,6 +65,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  item: PropTypes.object,
 };
 
 export default ProductBox;
