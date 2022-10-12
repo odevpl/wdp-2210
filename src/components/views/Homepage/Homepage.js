@@ -6,6 +6,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import SpecjalOffer from '../../features/SpecjalOffer/SpecjalOffer';
 import BrandBox from '../../common/BrandBox/BrandBox';
 import Blog from '../../features/Blog/Blog';
+import Galery from '../../common/Galery/Galery';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -14,6 +15,7 @@ const Homepage = () => (
     <NewFurniture />
     <BrandBox />
     <Blog/>
+    <Galery />
   </div>
 );
 
