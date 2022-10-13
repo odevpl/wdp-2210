@@ -65,7 +65,11 @@
             text-decoration: none;
 
             &:hover {
-              color: $footer-socialmedia-hover;
+              transition: $transition; 
+              color: $primary;
+              text-decoration: none;
+              transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+              position: relative;
             }
           }
         }
