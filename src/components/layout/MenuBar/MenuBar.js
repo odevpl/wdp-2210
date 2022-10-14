@@ -22,9 +22,7 @@ const MenuBar = ({ children }) => {
           <div className={'col-lg-6 ' + styles.searchDiv}>
             <ProductSearch />
           </div>
-          <a onClick={handleClick} href='#' className={styles.toggle_button}>
-            <FontAwesomeIcon icon={faBars} />
-          </a>
+
           <div
             className={clsx(
               'col-lg-6 ' + styles.menu,
@@ -57,6 +55,9 @@ const MenuBar = ({ children }) => {
               </li>
             </ul>
           </div>
+          <a onClick={handleClick} href='#' className={styles.toggle_button}>
+            <FontAwesomeIcon icon={faBars} />
+          </a>
         </nav>
       </div>
     </div>

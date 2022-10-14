@@ -59,16 +59,3 @@
   }
   
 }
-@media (max-width: 560px) {
-  .root {
-    flex-direction: column;
-    border: none;
-    margin-bottom: 20px;
-  }
-
-  .category,
-  .searchField{
-    border: 1px solid $form-border-color;
-
-  }
-}
