@@ -36,7 +36,14 @@
       font-weight: 500;
       letter-spacing: 1px;
 
-      &:hover,
+      &:hover {
+        transition: $transition; 
+        background-color: $hover-background;
+        color: $hover-text-color;
+        text-decoration: none;
+        transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+        position: relative;
+      }
       &.active {
         background-color: $header-menu-hover-bg;
         color: $header-menu-hover-text;

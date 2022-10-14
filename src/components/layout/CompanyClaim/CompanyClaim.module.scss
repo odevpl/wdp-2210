@@ -65,7 +65,12 @@
 
       &:hover {
         .cartIcon {
-          background-color: lighten($cartBox-hover, 10%);
+          transition: $transition; 
+          background-color: $hover-background;
+          color: $hover-text-color;
+          text-decoration: none;
+          transform: scale($hover-scale) translate($hover-left-right, $hover-top-down);
+          position: relative;
         }
       }
     }
