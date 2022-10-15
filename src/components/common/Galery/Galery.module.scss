@@ -3,18 +3,115 @@
 .wrapper{
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 30px;
+    height: 500px;
 
     .left{
         border: 1px solid black;
         width: 100%;
         height: 100%;
+        overflow: hidden;
+
+        .main{
+            width: 100%;
+            margin: auto;
+            position: relative;
+            height: 100%;
+            border: 2px solid grey;
+            
+        
+        }
+        .buttonBox{ 
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            .btn{
+                
+                border: 2px solid grey;
+                cursor: pointer;
+            }
+
+        }
+        .content{
+            background-color: red;
+            //position: absolute;
+            
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+                position: absolute;
+            }
+
+            .content1{
+                visibility: visible;
+        
+            }
+            .content2{
+                visibility: hidden;
+            }
+            .content3{
+                visibility: hidden;
+            }
+            .content4{
+                visibility: hidden;
+            }
+        }
 
     }
+
+
+    .btn1{
+        background-color: grey;
+    }
+    .btn2{
+
+    }
+    .btn3{
+
+    }
+    .btn4{
+
+    }
+
+
+
 
     .right{
         border: 1px solid black;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        margin-left: 5%;
+        .description{
+            position: absolute;
+            bottom: 50%;
+            left: 7%;
+
+            h1{
+                color: gold;
+            }
+        }
+        span{
+            color: green;
+            font-size: 50px;
+        }
+        img{
+            object-fit: cover;
+            
+            width: 100%;
+            height: 100%
+        }
+        button{
+            text-align: center;
+            background-color:  green;
+            border-radius: 10%;
+            color: white;
+            padding: 10px;
+
+        }
+        
+
 
     }
+    
+
+    
 }
