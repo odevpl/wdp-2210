@@ -20,7 +20,7 @@ class NewFurniture extends React.Component {
     // this.change();
   }
   change() {
-    if (this.state.fade == false) {
+    if (this.state.fade === false) {
       this.state.fade = true;
       return styles.fade_in;
     } else {
@@ -81,7 +81,7 @@ class NewFurniture extends React.Component {
           <div className={'row ' + this.change()}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+                <ProductBox {...item} item={item} />
               </div>
             ))}
           </div>

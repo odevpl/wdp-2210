@@ -1,0 +1,26 @@
+@import '../../../styles/settings.scss';
+
+.stars {
+  position: relative;
+}
+
+.stars a {
+  text-decoration: none;
+  color: $product-stars-color;
+  position: relative;
+  z-index: 10;
+}
+
+.stars:hover a {
+  color: $lightGrey;
+}
+
+.stars a:hover ~ a {
+  color: $product-stars-color;
+}
+
+.stars {
+  .active {
+    color: $lightGrey;
+  }
+}
