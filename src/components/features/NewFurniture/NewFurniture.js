@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
@@ -23,7 +22,6 @@ class NewFurniture extends React.Component {
     if (this.state.fade === false) {
       this.state.fade = true;
       return styles.fade_in;
-      console.log(this.state.fade);
     } else {
       this.state.fade = false;
       return styles.fade_out;

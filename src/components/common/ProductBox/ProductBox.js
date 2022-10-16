@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import Popup from '../../common/Popup/Popup';
 
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -16,6 +17,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
   const [isFavorite, setFavorite] = useState(favorite);
   const [exchange, setExchange] = useState(false);
   const [mouse, setMouse] = useState(false);
+  const [popup, setPopup] = useState(false);
   const navigate = useNavigate();
 
   const clickFavorite = () => {
@@ -44,6 +46,11 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
     setMouse(false);
   };
 
+  const showPopup = e => {
+    e.preventDefault();
+    setPopup(true);
+  };
+
   const clickHandler = (e, name) => {
     e.preventDefault();
     const replacedName = name.replace(/ /g, '-');
@@ -58,12 +65,20 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
         className={styles.photo}
         style={{
           backgroundImage:
-            `url(${process.env.PUBLIC_URL}/images/bed/` + name.slice(-1) + '.jpg)',
+            `url(${process.env.PUBLIC_URL}/images/` +
+            item.category +
+            `/` +
+            item.img +
+            '.jpg)',
         }}
       >
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small' className={mouse ? '' : styles.none}>
+          <Button
+            variant='small'
+            onClick={showPopup}
+            className={mouse ? '' : styles.none}
+          >
             Quick View
           </Button>
           <Button variant='small' className={mouse ? '' : styles.none}>
@@ -99,6 +114,9 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
           </Button>
         </div>
       </div>
+      <Popup popup={popup} setPopup={setPopup} item={item} stars={stars}>
+        <h1>Hi</h1>
+      </Popup>
     </div>
   );
 };
