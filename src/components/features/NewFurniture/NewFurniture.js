@@ -18,12 +18,12 @@ class NewFurniture extends React.Component {
 
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
-    // this.change();
   }
   change() {
-    if (this.state.fade == false) {
+    if (this.state.fade === false) {
       this.state.fade = true;
       return styles.fade_in;
+      console.log(this.state.fade);
     } else {
       this.state.fade = false;
       return styles.fade_out;
@@ -72,7 +72,7 @@ class NewFurniture extends React.Component {
             <div className='container'>
               <div className={styles.panelBar}>
                 <div className='row no-gutters align-items-end'>
-                  <div className={'col-auto ' + styles.heading}>
+                  <div className={'col-12 col-sm-12 col-md-3 ' + styles.heading}>
                     <h3>New furniture</h3>
                   </div>
                   <div className={'col ' + styles.menu}>
@@ -94,16 +94,14 @@ class NewFurniture extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className='row'>
-                {categoryProducts
-                  .slice(activePage * 8, (activePage + 1) * 8)
-                  .map(item => (
-                    <div key={item.id} className='col-3'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))}
-              </div>
             </div>
+          </div>
+          <div className={'row ' + this.change()}>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-6 col-md-4 col-lg-3 '>
+                <ProductBox {...item} item={item} />
+              </div>
+            ))}
           </div>
         </Swipeable>
       </div>
