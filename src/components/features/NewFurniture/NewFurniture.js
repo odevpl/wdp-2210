@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
@@ -23,8 +22,6 @@ class NewFurniture extends React.Component {
     if (this.state.fade === false) {
       this.state.fade = true;
       return styles.fade_in;
-      console.log(this.state.fade);
-
     } else {
       this.state.fade = false;
       return styles.fade_out;
@@ -95,15 +92,16 @@ class NewFurniture extends React.Component {
                   </div>
                 </div>
               </div>
-
-            </div>
-          </div>
-          <div className={'row ' + this.change()}>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-md-4 col-lg-3 '>
-                <ProductBox {...item} item={item} />
+              <div className={'row ' + this.change()}>
+                {categoryProducts
+                  .slice(activePage * 8, (activePage + 1) * 8)
+                  .map(item => (
+                    <div key={item.id} className='col-6 col-md-4 col-lg-3 '>
+                      <ProductBox {...item} item={item} />
+                    </div>
+                  ))}
               </div>
-            ))}
+            </div>
           </div>
         </Swipeable>
       </div>
