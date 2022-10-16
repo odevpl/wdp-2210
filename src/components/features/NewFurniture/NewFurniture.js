@@ -17,7 +17,6 @@ class NewFurniture extends React.Component {
 
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
-    // this.change();
   }
   change() {
     if (this.state.fade === false) {
@@ -55,7 +54,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-12 col-sm-12 col-md-3 ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
 
@@ -80,7 +79,7 @@ class NewFurniture extends React.Component {
           </div>
           <div className={'row ' + this.change()}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
+              <div key={item.id} className='col-6 col-md-4 col-lg-3 '>
                 <ProductBox {...item} item={item} />
               </div>
             ))}
