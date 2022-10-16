@@ -54,7 +54,11 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
         className={styles.photo}
         style={{
           backgroundImage:
-            `url(${process.env.PUBLIC_URL}/images/bed/` + name.slice(-1) + '.jpg)',
+            `url(${process.env.PUBLIC_URL}/images/` +
+            item.category +
+            `/` +
+            item.img +
+            '.jpg)',
         }}
       >
         {promo && (
@@ -103,7 +107,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
           </Button>
         </div>
       </div>
-      <Popup popup={popup} setPopup={setPopup}>
+      <Popup popup={popup} setPopup={setPopup} item={item} stars={stars}>
         <h1>Hi</h1>
       </Popup>
     </div>
