@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import Popup from '../../common/Popup/Popup';
 
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -14,6 +15,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
   const [isFavorite, setFavorite] = useState(favorite);
   const [exchange, setExchange] = useState(false);
   const [mouse, setMouse] = useState(false);
+  const [popup, setPopup] = useState(false);
 
   const clickFavorite = () => {
     if (isFavorite === true) {
@@ -41,6 +43,11 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
     setMouse(false);
   };
 
+  const showPopup = e => {
+    e.preventDefault();
+    setPopup(true);
+  };
+
   return (
     <div className={styles.root} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
       <div
@@ -56,7 +63,11 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
           </div>
         )}
         <div className={styles.buttons}>
-          <Button variant='small' className={mouse ? '' : styles.none}>
+          <Button
+            variant='small'
+            onClick={showPopup}
+            className={mouse ? '' : styles.none}
+          >
             Quick View
           </Button>
           <Button variant='small' className={mouse ? '' : styles.none}>
@@ -92,6 +103,9 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
           </Button>
         </div>
       </div>
+      <Popup popup={popup} setPopup={setPopup}>
+        <h1>Hi</h1>
+      </Popup>
     </div>
   );
 };
