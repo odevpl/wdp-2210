@@ -1,0 +1,115 @@
+@import "../../../styles/settings.scss";
+
+.prom{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 20px;
+}
+
+.left{
+    flex-direction: row;
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+
+    img{
+        height: 100%; 
+        width: 120%; 
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .text{
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 5%;
+        
+    
+        .border{
+            color: white;
+            border: 4px solid white;
+            text-align: center;
+        }
+    
+        span{
+            color: white;
+            font-weight: bold;
+        }
+    
+    }
+}
+           
+.right{
+    
+    height: 95%;
+    width: 95%;
+    flex-direction: column;
+    .up{
+        position: relative;
+        max-height: 190px;
+        width: 100%;
+        margin-bottom: 4%;
+        object-fit: cover;
+        overflow: hidden;
+        img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -22%);
+            object-fit: cover;
+        }  
+        .text{
+            position: absolute;
+            color: gold;
+            top: 15%;
+            left: 5%;
+            font-size: 100%;
+
+            .border{
+                color: white;
+                border: 4px solid white;
+                
+            }
+        
+            span{
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+    .down{
+        position: relative;
+        max-height: 190px;
+        width: 100%;
+        margin-top: 15px;
+        object-fit: cover;
+        overflow: hidden;
+        img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;   
+        }
+        .text{
+            position: absolute;
+            color: rgb(0, 0, 0);
+            top: 15%;
+            left: 5%;
+        
+            span{
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
