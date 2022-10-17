@@ -4,14 +4,66 @@
   padding: 0 0;
 
 
-  .container {
-    padding: 0 0;
-
-  }
-
-  .banner {
+  .banner_container {
     text-align: center;
-  }
+    padding: 0;
+    background-color: $baner-bg;
+    .baner_background{
+      position: relative;
+      height: 200px;
+      
+      .baner_text{
+        position: absolute;
+        color: $baner-text-color;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+
+        h2{
+          font-size: 55px;
+          font-weight: 200;
+          margin: 0px;
+          span{
+            font-weight: 600;
+
+          }
+        }
+        h4{
+          font-weight: 300;
+          letter-spacing: 12px;
+          padding-left: 10px;
+          span{
+            font-weight: 600;
+            color: $primary;
+          }
+        }
+
+      }
+    }
+
+
+    }
+    .baner_navi{
+      background-color: $lightGrey;
+      height: 50px;
+      text-align: start;
+      color: $mediumGrey;
+      padding-top: 15px;
+      padding-left: 20px;
+      
+
+      span{
+        margin-left: 8px;
+      }
+      .banerSpan{
+        color: $primary;
+
+      }
+      
+
+    }
 
   .product_container{
     width: 100%;
