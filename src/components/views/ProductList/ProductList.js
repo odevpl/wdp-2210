@@ -7,7 +7,7 @@ const ProductList = () => {
 
   return (
     <div className={styles.root}>
-      <div className={'container ' + styles.x}>
+      <div className={'container ' + styles.container}>
         <div className={'col-12 ' + styles.banner}>
           <div>Banner</div>
           <div>Home</div>
@@ -16,6 +16,7 @@ const ProductList = () => {
           <div className={'col-9 ' + styles.product_list}>Product List</div>
           <div className={'col-3 ' + styles.filters}>Filters</div>
         </div>
+        <div className={'col-12 ' + styles.brands}>Brands</div>
       </div>
     </div>
   );

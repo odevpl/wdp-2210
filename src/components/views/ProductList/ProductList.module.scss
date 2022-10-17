@@ -4,15 +4,32 @@
   padding: 0 0;
 
 
-  .x {
-    border: 1px solid red;
-    padding: 0;
+  .container {
+    padding: 0 0;
+
   }
+
+  .banner {
+    text-align: center;
+  }
+
   .product_container{
-    border: 1px solid blue;
-    width: 110%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+
+    .product_list{
+      text-align: center;
+
+    }
+    .filters{
+      text-align: center;
+
+    }
+  }
+  .brands{
+    text-align: center;
+
   }
 }
