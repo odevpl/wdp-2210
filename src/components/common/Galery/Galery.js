@@ -1,8 +1,21 @@
 import React from 'react';
 import styles from './Galery.module.scss';
 import clsx from 'clsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from '@fortawesome/free-solid-svg-icons';
+
+import { useSelector } from 'react-redux';
 
 const Galery = () => {
+  const chairs = useSelector(store =>
+    store.products.filter(product => product.category === 'chair')
+  );
+
+  console.log(chairs);
+
   var content1 = document.getElementsByClassName(styles.content1);
   var content2 = document.getElementsByClassName(styles.content2);
   var content3 = document.getElementsByClassName(styles.content3);
@@ -66,46 +79,71 @@ const Galery = () => {
         <div className={styles.left}>
           <h5>FURNITURE GALLERY</h5>
           <div className={styles.main}>
-            <div className={styles.buttonBox}>
-              <button className={clsx(styles.btn, styles.btn1)} onClick={tab1}>
-                FEATURED
-              </button>
-              <button className={clsx(styles.btn, styles.btn2)} onClick={tab2}>
-                TOP SELLER
-              </button>
-              <button className={clsx(styles.btn, styles.btn3)} onClick={tab3}>
-                SALE OF
-              </button>
-              <button className={clsx(styles.btn, styles.btn4)} onClick={tab4}>
-                TOP RATED
-              </button>
+            <div className={styles.buttonAndImg}>
+              <div className={styles.buttonBox}>
+                <button className={clsx(styles.btn, styles.btn1)} onClick={tab1}>
+                  FEATURED
+                </button>
+                <button className={clsx(styles.btn, styles.btn2)} onClick={tab2}>
+                  TOP SELLER
+                </button>
+                <button className={clsx(styles.btn, styles.btn3)} onClick={tab3}>
+                  SALE OF
+                </button>
+                <button className={clsx(styles.btn, styles.btn4)} onClick={tab4}>
+                  TOP RATED
+                </button>
+              </div>
+              <div className={clsx(styles.content1, styles.content)}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/galery/featured.jpg'}
+                  alt='bed'
+                />
+              </div>
+              <div className={clsx(styles.content2, styles.content)}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/galery/topSeller.jpg'}
+                  alt='bed1'
+                />
+              </div>
+              <div className={clsx(styles.content3, styles.content)}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/galery/saleOff.jpg'}
+                  alt='bed2'
+                />
+              </div>
+              <div className={clsx(styles.content4, styles.content)}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/galery/topRated.jpg'}
+                  alt='bed3'
+                />
+              </div>
             </div>
-            <div className={clsx(styles.content1, styles.content)}>
-              <img
-                src={process.env.PUBLIC_URL + '/images/galery/featured.jpg'}
-                alt='bed'
+          </div>
+          <div className={styles.slider}>
+            <div className={styles.arrow}>
+              <FontAwesomeIcon
+                className={styles.fa}
+                icon={faArrowAltCircleLeft}
+                faAlignCenter
               />
             </div>
-            <div className={clsx(styles.content2, styles.content)}>
-              <img
-                src={process.env.PUBLIC_URL + '/images/galery/topSeller.jpg'}
-                alt='bed1'
-              />
+            <div className={styles.sliderImg}>
+              {chairs.map(chair => (
+                <div className={styles.smallImageBox} key={chair.name}>
+                  <img
+                    src={process.env.PUBLIC_URL + '/images/chair/' + chair.img + '.jpg'}
+                    alt='bed'
+                  />
+                </div>
+              ))}
             </div>
-            <div className={clsx(styles.content3, styles.content)}>
-              <img
-                src={process.env.PUBLIC_URL + '/images/galery/saleOff.jpg'}
-                alt='bed2'
+            <div className={styles.arrow}>
+              <FontAwesomeIcon
+                className={styles.fa}
+                icon={faArrowAltCircleRight}
+                faAlignCenter
               />
-            </div>
-            <div className={clsx(styles.content4, styles.content)}>
-              <img
-                src={process.env.PUBLIC_URL + '/images/galery/topRated.jpg'}
-                alt='bed3'
-              />
-            </div>
-            <div className={styles.slider}>
-              <h1>slider</h1>
             </div>
           </div>
         </div>
