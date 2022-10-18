@@ -5,8 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowAltCircleLeft,
   faArrowAltCircleRight,
+  faShoppingBasket,
+  faExchangeAlt,
 } from '@fortawesome/free-solid-svg-icons';
-
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import StarCounter from '../StarCounter/StarCounter';
 import { useSelector } from 'react-redux';
 
 const Galery = () => {
@@ -99,6 +102,19 @@ const Galery = () => {
                   src={process.env.PUBLIC_URL + '/images/galery/featured.jpg'}
                   alt='bed'
                 />
+                <div className={styles.boardForStars}>
+                  <p>name</p>
+                  <StarCounter stars={2} item={'name'} />
+                </div>
+                <div className={styles.leftMenu}>
+                  <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+                  <FontAwesomeIcon className={styles.icon} icon={faExchangeAlt}>
+                    Add to compare
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon className={styles.icon} icon={faHeart}>
+                    Favorite
+                  </FontAwesomeIcon>
+                </div>
               </div>
               <div className={clsx(styles.content2, styles.content)}>
                 <img
@@ -130,7 +146,10 @@ const Galery = () => {
             </div>
             <div className={styles.sliderImg}>
               {chairs.map(chair => (
-                <div className={styles.smallImageBox} key={chair.name}>
+                <div
+                  className={clsx(styles.smallImageBox, styles.noActive)}
+                  key={chair.name}
+                >
                   <img
                     src={process.env.PUBLIC_URL + '/images/chair/' + chair.img + '.jpg'}
                     alt='bed'
