@@ -1,19 +1,23 @@
 @import "../../../styles/settings.scss";
 
+
+
+
+
 .root {
-  border: 1px solid $productSearch-border;
+  border: 1px solid white;
   display: inline-flex;
   height: 45px;
-  color: $productSearch-text-color;
+  color: white;
 
   .category {
-    border-right: 1px solid $productSearch-category-right-border;
+    border-right: 1px solid white;
     display: flex;
     align-items: center;
     position: relative;
 
     .icon:first-child {
-      color: $productSearch-category-icon;
+      color: white;
       position: absolute;
       left: 10px;
       z-index: 0;
@@ -49,7 +53,7 @@
       outline: none;
 
       &::placeholder {
-        color: $productSearch-placeholder-color;
+        color: white;
       }
     }
 
@@ -100,5 +104,9 @@
 
 .dropdown:hover .content ul {
   display: block;
+}
+
+li:hover {
+  background-color: white;
 }
 
