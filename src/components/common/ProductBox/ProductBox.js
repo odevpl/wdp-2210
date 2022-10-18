@@ -11,11 +11,14 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import StarCounter from '../StarCounter/StarCounter';
 
+import { useNavigate } from 'react-router-dom';
+
 const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
   const [isFavorite, setFavorite] = useState(favorite);
   const [exchange, setExchange] = useState(false);
   const [mouse, setMouse] = useState(false);
   const [popup, setPopup] = useState(false);
+  const navigate = useNavigate();
 
   const clickFavorite = () => {
     if (isFavorite === true) {
@@ -48,9 +51,17 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
     setPopup(true);
   };
 
+  const clickHandler = (e, name) => {
+    e.preventDefault();
+    const replacedName = name.replace(/ /g, '-');
+    navigate('/product/' + replacedName);
+  };
+
   return (
     <div className={styles.root} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
       <div
+        value={name}
+        onClick={e => clickHandler(e, name)}
         className={styles.photo}
         style={{
           backgroundImage:
@@ -61,11 +72,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
             '.jpg)',
         }}
       >
-        {promo && (
-          <div className={styles.sale} sty>
-            {promo}
-          </div>
-        )}
+        {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button
             variant='small'
@@ -80,7 +87,7 @@ const ProductBox = ({ name, price, promo, stars, favorite, item }) => {
         </div>
       </div>
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <h5 onClick={e => clickHandler(e, name)}>{name}</h5>
         <StarCounter stars={stars} item={item} />
       </div>
       <div className={styles.line}></div>

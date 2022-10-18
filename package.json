@@ -62,10 +62,11 @@
     "react-easy-swipe": "^0.0.22",
     "react-native-gesture-handler": "^2.7.0",
     "react-redux": "^7.2.9",
-    "react-router-dom": "^5.3.4",
+    "react-router-dom": "^6.4.1",
     "react-scripts": "3.1.2",
     "react-swipeable": "^7.0.0",
     "react-test-renderer": "^16.9.0",
+    "react-use-navigate": "^0.1.1",
     "redux": "^4.2.0",
     "sass": "^1.55.0"
   },
