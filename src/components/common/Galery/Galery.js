@@ -11,13 +11,13 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import StarCounter from '../StarCounter/StarCounter';
 import { useSelector } from 'react-redux';
+import ToolTip from '../../features/ToolTip/ToolTip';
+
 
 const Galery = () => {
   const chairs = useSelector(store =>
     store.products.filter(product => product.category === 'chair')
   );
-
-  console.log(chairs);
 
   var content1 = document.getElementsByClassName(styles.content1);
   var content2 = document.getElementsByClassName(styles.content2);
@@ -30,11 +30,6 @@ const Galery = () => {
     content2[0].style.visibility = 'hidden';
     content3[0].style.visibility = 'hidden';
     content4[0].style.visibility = 'hidden';
-
-    console.log(content1[0].style.visibility);
-    console.log(content2[0].style.visibility);
-    console.log(content3[0].style.visibility);
-    console.log(content4[0].style.visibility);
   };
 
   const tab2 = e => {
@@ -43,11 +38,6 @@ const Galery = () => {
     content1[0].style.visibility = 'hidden';
     content3[0].style.visibility = 'hidden';
     content4[0].style.visibility = 'hidden';
-
-    console.log(content1[0].style.visibility);
-    console.log(content2[0].style.visibility);
-    console.log(content3[0].style.visibility);
-    console.log(content4[0].style.visibility);
   };
 
   const tab3 = e => {
@@ -56,11 +46,6 @@ const Galery = () => {
     content1[0].style.visibility = 'hidden';
     content2[0].style.visibility = 'hidden';
     content4[0].style.visibility = 'hidden';
-
-    console.log(content1[0].style.visibility);
-    console.log(content2[0].style.visibility);
-    console.log(content3[0].style.visibility);
-    console.log(content4[0].style.visibility);
   };
 
   const tab4 = e => {
@@ -69,11 +54,6 @@ const Galery = () => {
     content1[0].style.visibility = 'hidden';
     content3[0].style.visibility = 'hidden';
     content2[0].style.visibility = 'hidden';
-
-    console.log(content1[0].style.visibility);
-    console.log(content2[0].style.visibility);
-    console.log(content3[0].style.visibility);
-    console.log(content4[0].style.visibility);
   };
 
   return (
@@ -107,13 +87,9 @@ const Galery = () => {
                   <StarCounter stars={2} item={'name'} />
                 </div>
                 <div className={styles.leftMenu}>
-                  <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-                  <FontAwesomeIcon className={styles.icon} icon={faExchangeAlt}>
-                    Add to compare
-                  </FontAwesomeIcon>
-                  <FontAwesomeIcon className={styles.icon} icon={faHeart}>
-                    Favorite
-                  </FontAwesomeIcon>
+                  <ToolTip param={<FontAwesomeIcon className={clsx(styles.icon, )} icon={faShoppingBasket} />} toolTiptext={'Cart'}/>
+                  <ToolTip param={<FontAwesomeIcon className={styles.icon} icon={faExchangeAlt}/>} toolTiptext={'Comparison'}/>
+                  <ToolTip param={<FontAwesomeIcon className={styles.icon} icon={faHeart}/>} toolTiptext={'Favorite'}/>
                 </div>
               </div>
               <div className={clsx(styles.content2, styles.content)}>
