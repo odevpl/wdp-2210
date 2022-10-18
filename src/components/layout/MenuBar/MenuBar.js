@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import clsx from 'clsx';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
 import { NavLink } from 'react-router-dom';
-
-import { useState } from 'react';
 
 const MenuBar = ({ children }) => {
   const [category, setCategory] = useState('home');
