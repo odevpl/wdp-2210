@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
+import Login from './components/common/Login/Login';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
@@ -20,6 +20,7 @@ const App = () => (
         <Route path={'/shop/:categoryId'} element={<ProductList />} />
         <Route path={'/product/:productId'} element={<ProductPage />} />
         <Route path={'/blog'} element={<Blog />} />
+        <Route path={'/login'} element={<Login />} />
       </Routes>
     </MainLayout>
   </Provider>
