@@ -4,10 +4,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
+import ChatBot from '../src/components/views/ChatBot/ChatBot';
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
+    <ChatBot />
   </BrowserRouter>,
 
   document.getElementById('root')

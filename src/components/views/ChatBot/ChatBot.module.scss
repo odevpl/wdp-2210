@@ -1,0 +1,73 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  color: white;
+  position: fixed;
+  bottom: 0;
+  padding: 25px;
+
+  .icon {
+    font-size: 3em;
+    cursor: pointer;
+    border: 1px solid $primary;
+    border-radius: 50%;
+    width: 75px;
+    background-color: $primary;
+    text-align: center;
+  }
+
+  span {
+    cursor: pointer;
+  }
+};
+
+.textArea {
+  height: 500px;
+  width: 300px;
+  background-color: white;
+  border: 3px solid $primary;
+  border-radius: 5%;
+  margin-bottom: 15px;
+  position: relative;
+  opacity: 0.98;
+
+  .text {
+    color: $primary;
+    box-shadow: 1px 1px 1px $shadow;
+    border-radius: 5px;
+    min-width: 50%;
+    max-width: 70%;
+    padding-left: 10px;
+  }
+
+  .area {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color: $primary;
+    
+    textarea {
+      width: 100%;
+      resize: none;
+      border: none;
+      background-color: $veryLightGrey;
+    }
+
+    span {
+      position: absolute;
+      left:90%;
+      top: 6%;
+      cursor: pointer;
+    }
+  }
+
+  .textAreaBtn {
+    color: tomato;
+    text-align: end;
+    padding: 5px 10px 5px;
+  }
+}
+
+.notActive {
+  display: none;
+}
