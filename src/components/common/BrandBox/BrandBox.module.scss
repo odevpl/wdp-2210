@@ -7,33 +7,39 @@
     max-height: 75px;
     margin-bottom: 10px;
     padding-bottom: 1px;
-    display: grid;
-    grid-template-columns: 5% 18% 18% 18% 18% 18% 5%;
-
+    display: flex;
     border-top: 1px solid grey;
     border-bottom:  1px solid grey;
 
-    .brandImage{
-        border: 3px solid grey;
-        margin: 5px;
-        max-height: 30%;
+    .sliderBox{
+        display: flex;
+        overflow-x: hidden;
+        flex-wrap: nowrap;
         
 
-        img{
-            width:  100%;
-            height: 100%;
-            object-fit: contain;
+        .brandImage{
+            border: 3px solid grey;
+            margin: 5px;
+            min-width: 32.5%; 
 
+            img{
+                width:  100%;
+                height: 100%;
+                object-fit: contain;
+
+            }
         }
-    }
+    }   
 }
 
 .faBox{
     margin: 5px;
-    height: 30%;
+    min-height: 100%;
+    width: 5%;
     border: 2px solid black;
 	position: relative;
     background-color: black;
+    cursor: pointer;
 
     .fa{
         position: absolute;  
