@@ -1,0 +1,27 @@
+
+.toolTip{
+    visibility: hidden;
+}
+
+.toolTipBox{
+    display: flex;
+    flex-direction: row;
+
+    :hover{
+         background-color:  goldenrod;
+    }
+    
+    &:hover .toolTip{       
+            background-color: black;
+            color:  white;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            max-height: 35px;
+            visibility: visible;
+        
+    }
+}
+
+
+
