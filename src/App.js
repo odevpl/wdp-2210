@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Login from './components/common/Login/Login';
+import Register from './components/common/Register/Register';
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
@@ -21,6 +22,7 @@ const App = () => (
         <Route path={'/product/:productId'} element={<ProductPage />} />
         <Route path={'/blog'} element={<Blog />} />
         <Route path={'/login'} element={<Login />} />
+        <Route exact path={'/register'} component={Register} />
       </Routes>
     </MainLayout>
   </Provider>
