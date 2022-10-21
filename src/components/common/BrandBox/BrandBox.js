@@ -9,26 +9,38 @@ import {
 
 const BrandBox = () => {
   const brands = useSelector(store => store.brands);
-  console.log(brands);
+
+  const left = () => {
+    const leftArrow = document.getElementById('slider');
+    leftArrow.scrollLeft -= 1080;
+  };
+
+  const right = () => {
+    const rightArrow = document.getElementById('slider');
+    rightArrow.scrollLeft += 1080;
+  };
+
   return (
     <div className='container'>
       <div className={styles.brandImageBox}>
-        <div className={styles.faBox}>
+        <div id='left' className={styles.faBox} onClick={left}>
           <FontAwesomeIcon
             className={styles.fa}
             icon={faArrowAltCircleLeft}
             faAlignCenter
           />
         </div>
-        {brands.map(brand => (
-          <div className={styles.brandImage} key={brand.id}>
-            <img
-              src={`${process.env.PUBLIC_URL}/images/Brands/${brand.name}.jpg`}
-              alt='sofa'
-            />
-          </div>
-        ))}
-        <div className={styles.faBox}>
+        <div id='slider' className={styles.sliderBox}>
+          {brands.map(brand => (
+            <div className={styles.brandImage} key={brand.id}>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/Brands/${brand.name}.jpg`}
+                alt='sofa'
+              />
+            </div>
+          ))}
+        </div>
+        <div id='right' className={styles.faBox} onClick={right}>
           <FontAwesomeIcon
             className={styles.fa}
             icon={faArrowAltCircleRight}

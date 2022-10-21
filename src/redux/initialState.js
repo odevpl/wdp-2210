@@ -5,6 +5,7 @@ const initialState = {
     { id: '3', name: 'li' },
     { id: '4', name: 'orginal' },
     { id: '5', name: 'quality' },
+    { id: '6', name: 'order' },
   ],
   categories: [
     { id: 'bed', name: 'Bed' },
