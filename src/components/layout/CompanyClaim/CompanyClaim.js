@@ -22,7 +22,7 @@ const CompanyClaim = () => (
           </a>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='#' className={styles.cartBox}>
+          <a href='/cart' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
@@ -39,7 +39,7 @@ const CompanyClaim = () => (
         </div>
         <div>
           <div className={`col text-right ${styles.cart}`}>
-            <a href='#' className={styles.cartBox}>
+            <a href='/cart' className={styles.cartBox}>
               <div className={styles.cartIcon}>
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>

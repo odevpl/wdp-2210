@@ -1,0 +1,128 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  input {
+    width:35px;
+    border-color: $veryLightGrey;
+    border-left: none;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  button {
+    background-color: white;
+    width: 35px;
+    border-color: $veryLightGrey;
+    box-shadow: none;
+  }
+
+  table {
+    border-right: 1px solid $veryLightGrey;
+    margin-bottom: 0;
+  }
+
+  .price {
+    color: $green;
+  }
+
+  .btn {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+
+  .image {
+    width: 80px;
+    height: 80px;
+    background-color: $lightGrey;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  tr {
+    padding: 12px;
+  }
+
+  h2 {
+    padding:24px;
+  }
+
+  .tdBtn {
+    text-align: center;
+  }
+
+  thead {
+    background-color: $veryLightGrey;
+  }
+
+  tbody {
+    border-bottom: 1px solid $veryLightGrey;
+  }
+
+  .coupon {
+    border-right: 1px solid $veryLightGrey;
+    border-bottom: 1px solid $veryLightGrey;
+    padding: 24px;
+
+    input {
+      width: 200px;
+      border: 1px solid $lightGrey;
+      text-align: start;
+    }
+
+    button {
+      width: auto;
+      margin-left: 24px;
+      background-color: $primary;
+      border: none;
+      padding: 9px;
+      font-weight: bold;
+    }
+
+    .cartBtn {
+      opacity: 0.7;
+      margin-left: 35em;
+      overflow: hidden;
+    }
+  }
+
+  .totalDiv {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid $lightGrey;
+
+    table {
+      width: 450px;
+      text-align: start;
+      border-bottom: 1px solid $lightGrey;
+
+      thead {
+        height: 54px;
+      }
+
+      td {
+        padding: 12px 12px 12px 3px;
+        border-right: 1px solid $lightGrey;
+      }
+
+      th {
+        padding: 0 24px;
+      }
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      margin: 14px;
+      background-color: $primary;
+      border: none;
+      padding: 9px;
+      font-weight: bold;
+      margin-left: 48px;
+    }
+  }
+}
